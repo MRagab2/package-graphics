@@ -1,0 +1,17 @@
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\bin\Debug\net6.0-windows\2DTransformations.exe
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\bin\Debug\net6.0-windows\2DTransformations.deps.json
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\bin\Debug\net6.0-windows\2DTransformations.runtimeconfig.json
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\bin\Debug\net6.0-windows\2DTransformations.dll
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\bin\Debug\net6.0-windows\2DTransformations.pdb
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.csproj.AssemblyReference.cache
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\_2DTransformations.Transformations.resources
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.csproj.GenerateResource.cache
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.AssemblyInfoInputs.cache
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.AssemblyInfo.cs
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.csproj.CoreCompileInputs.cache
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.dll
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\refint\2DTransformations.dll
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.pdb
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\2DTransformations.genruntimeconfig.cache
+D:\Study\_FCAI - HU\3.2\Graphics\proj\2d-transformations-main\2DTransformations\2DTransformations\obj\Debug\net6.0-windows\ref\2DTransformations.dll

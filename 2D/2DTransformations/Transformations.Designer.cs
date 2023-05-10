@@ -28,226 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.xUpDown = new System.Windows.Forms.NumericUpDown();
-            this.xLabel = new System.Windows.Forms.Label();
-            this.yLabel = new System.Windows.Forms.Label();
-            this.yUpDown = new System.Windows.Forms.NumericUpDown();
-            this.transformLabel = new System.Windows.Forms.Label();
-            this.rotationRd = new System.Windows.Forms.RadioButton();
-            this.scaleRd = new System.Windows.Forms.RadioButton();
-            this.translationRd = new System.Windows.Forms.RadioButton();
-            this.testButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.angleUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.angleUpDown)).BeginInit();
-            this.SuspendLayout();
+            xUpDown = new NumericUpDown();
+            xLabel = new Label();
+            yLabel = new Label();
+            yUpDown = new NumericUpDown();
+            transformLabel = new Label();
+            rotationRd = new RadioButton();
+            scaleRd = new RadioButton();
+            translationRd = new RadioButton();
+            testButton = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
+            angleUpDown = new NumericUpDown();
+            label2 = new Label();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)xUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)yUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)angleUpDown).BeginInit();
+            SuspendLayout();
             // 
             // xUpDown
             // 
-            this.xUpDown.DecimalPlaces = 2;
-            this.xUpDown.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.xUpDown.Location = new System.Drawing.Point(906, 415);
-            this.xUpDown.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.xUpDown.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
-            this.xUpDown.Name = "xUpDown";
-            this.xUpDown.Size = new System.Drawing.Size(83, 27);
-            this.xUpDown.TabIndex = 0;
-            this.xUpDown.TabStop = false;
+            xUpDown.DecimalPlaces = 2;
+            xUpDown.Increment = new decimal(new int[] { 25, 0, 0, 131072 });
+            xUpDown.Location = new Point(190, 250);
+            xUpDown.Maximum = new decimal(new int[] { int.MinValue, 0, 0, 0 });
+            xUpDown.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
+            xUpDown.Name = "xUpDown";
+            xUpDown.Size = new Size(83, 27);
+            xUpDown.TabIndex = 0;
+            xUpDown.TabStop = false;
             // 
             // xLabel
             // 
-            this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(882, 417);
-            this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(18, 20);
-            this.xLabel.TabIndex = 1;
-            this.xLabel.Text = "X";
+            xLabel.AutoSize = true;
+            xLabel.Location = new Point(97, 252);
+            xLabel.Name = "xLabel";
+            xLabel.Size = new Size(18, 20);
+            xLabel.TabIndex = 1;
+            xLabel.Text = "X";
             // 
             // yLabel
             // 
-            this.yLabel.AutoSize = true;
-            this.yLabel.Location = new System.Drawing.Point(882, 461);
-            this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(17, 20);
-            this.yLabel.TabIndex = 3;
-            this.yLabel.Text = "Y";
+            yLabel.AutoSize = true;
+            yLabel.Location = new Point(97, 301);
+            yLabel.Name = "yLabel";
+            yLabel.Size = new Size(17, 20);
+            yLabel.TabIndex = 3;
+            yLabel.Text = "Y";
             // 
             // yUpDown
             // 
-            this.yUpDown.DecimalPlaces = 2;
-            this.yUpDown.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.yUpDown.Location = new System.Drawing.Point(906, 459);
-            this.yUpDown.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
-            this.yUpDown.Name = "yUpDown";
-            this.yUpDown.Size = new System.Drawing.Size(83, 27);
-            this.yUpDown.TabIndex = 2;
-            this.yUpDown.TabStop = false;
+            yUpDown.DecimalPlaces = 2;
+            yUpDown.Increment = new decimal(new int[] { 25, 0, 0, 131072 });
+            yUpDown.Location = new Point(190, 299);
+            yUpDown.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
+            yUpDown.Name = "yUpDown";
+            yUpDown.Size = new Size(83, 27);
+            yUpDown.TabIndex = 2;
+            yUpDown.TabStop = false;
             // 
             // transformLabel
             // 
-            this.transformLabel.AutoSize = true;
-            this.transformLabel.Location = new System.Drawing.Point(879, 260);
-            this.transformLabel.Name = "transformLabel";
-            this.transformLabel.Size = new System.Drawing.Size(110, 20);
-            this.transformLabel.TabIndex = 4;
-            this.transformLabel.Text = "Transform Type";
+            transformLabel.AutoSize = true;
+            transformLabel.Location = new Point(110, 24);
+            transformLabel.Name = "transformLabel";
+            transformLabel.Size = new Size(110, 20);
+            transformLabel.TabIndex = 4;
+            transformLabel.Text = "Transform Type";
             // 
             // rotationRd
             // 
-            this.rotationRd.AutoSize = true;
-            this.rotationRd.Location = new System.Drawing.Point(906, 298);
-            this.rotationRd.Name = "rotationRd";
-            this.rotationRd.Size = new System.Drawing.Size(83, 24);
-            this.rotationRd.TabIndex = 5;
-            this.rotationRd.Text = "rotation";
-            this.rotationRd.UseVisualStyleBackColor = true;
-            this.rotationRd.CheckedChanged += new System.EventHandler(this.rotationRd_CheckedChanged);
+            rotationRd.AutoSize = true;
+            rotationRd.Location = new Point(120, 184);
+            rotationRd.Name = "rotationRd";
+            rotationRd.Size = new Size(83, 24);
+            rotationRd.TabIndex = 5;
+            rotationRd.Text = "rotation";
+            rotationRd.UseVisualStyleBackColor = true;
+            rotationRd.CheckedChanged += rotationRd_CheckedChanged;
             // 
             // scaleRd
             // 
-            this.scaleRd.AutoSize = true;
-            this.scaleRd.Location = new System.Drawing.Point(906, 328);
-            this.scaleRd.Name = "scaleRd";
-            this.scaleRd.Size = new System.Drawing.Size(63, 24);
-            this.scaleRd.TabIndex = 6;
-            this.scaleRd.Text = "scale";
-            this.scaleRd.UseVisualStyleBackColor = true;
-            this.scaleRd.CheckedChanged += new System.EventHandler(this.scaleRd_CheckedChanged);
+            scaleRd.AutoSize = true;
+            scaleRd.Location = new Point(120, 81);
+            scaleRd.Name = "scaleRd";
+            scaleRd.Size = new Size(63, 24);
+            scaleRd.TabIndex = 6;
+            scaleRd.Text = "scale";
+            scaleRd.UseVisualStyleBackColor = true;
+            scaleRd.CheckedChanged += scaleRd_CheckedChanged;
             // 
             // translationRd
             // 
-            this.translationRd.AutoSize = true;
-            this.translationRd.Location = new System.Drawing.Point(906, 358);
-            this.translationRd.Name = "translationRd";
-            this.translationRd.Size = new System.Drawing.Size(100, 24);
-            this.translationRd.TabIndex = 7;
-            this.translationRd.Text = "translation";
-            this.translationRd.UseVisualStyleBackColor = true;
-            this.translationRd.CheckedChanged += new System.EventHandler(this.translationRd_CheckedChanged);
+            translationRd.AutoSize = true;
+            translationRd.Location = new Point(120, 133);
+            translationRd.Name = "translationRd";
+            translationRd.Size = new Size(100, 24);
+            translationRd.TabIndex = 7;
+            translationRd.Text = "translation";
+            translationRd.UseVisualStyleBackColor = true;
+            translationRd.CheckedChanged += translationRd_CheckedChanged;
             // 
             // testButton
             // 
-            this.testButton.Location = new System.Drawing.Point(882, 568);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(141, 38);
-            this.testButton.TabIndex = 9;
-            this.testButton.Text = "Test!";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            testButton.Location = new Point(97, 463);
+            testButton.Name = "testButton";
+            testButton.Size = new Size(141, 38);
+            testButton.TabIndex = 9;
+            testButton.Text = "Test!";
+            testButton.UseVisualStyleBackColor = true;
+            testButton.Click += testButton_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Location = new System.Drawing.Point(108, 73);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 600);
-            this.panel1.TabIndex = 10;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.BackColor = SystemColors.ActiveBorder;
+            panel1.Location = new Point(380, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(600, 600);
+            panel1.TabIndex = 10;
+            panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(851, 503);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Angle";
+            label1.AutoSize = true;
+            label1.Location = new Point(78, 410);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 20);
+            label1.TabIndex = 12;
+            label1.Text = "Angle";
             // 
             // angleUpDown
             // 
-            this.angleUpDown.DecimalPlaces = 2;
-            this.angleUpDown.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.angleUpDown.Location = new System.Drawing.Point(906, 501);
-            this.angleUpDown.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.angleUpDown.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
-            this.angleUpDown.Name = "angleUpDown";
-            this.angleUpDown.Size = new System.Drawing.Size(83, 27);
-            this.angleUpDown.TabIndex = 11;
-            this.angleUpDown.TabStop = false;
+            angleUpDown.DecimalPlaces = 2;
+            angleUpDown.Increment = new decimal(new int[] { 25, 0, 0, 131072 });
+            angleUpDown.Location = new Point(190, 408);
+            angleUpDown.Maximum = new decimal(new int[] { int.MinValue, 0, 0, 0 });
+            angleUpDown.Minimum = new decimal(new int[] { int.MinValue, 0, 0, int.MinValue });
+            angleUpDown.Name = "angleUpDown";
+            angleUpDown.Size = new Size(83, 27);
+            angleUpDown.TabIndex = 11;
+            angleUpDown.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(728, 679);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "P1:";
+            label2.AutoSize = true;
+            label2.Location = new Point(23, 532);
+            label2.Name = "label2";
+            label2.Size = new Size(28, 20);
+            label2.TabIndex = 13;
+            label2.Text = "P1:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(728, 713);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "P2:";
+            label3.AutoSize = true;
+            label3.Location = new Point(23, 592);
+            label3.Name = "label3";
+            label3.Size = new Size(28, 20);
+            label3.TabIndex = 14;
+            label3.Text = "P2:";
             // 
             // Transformations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.angleUpDown);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.testButton);
-            this.Controls.Add(this.translationRd);
-            this.Controls.Add(this.scaleRd);
-            this.Controls.Add(this.rotationRd);
-            this.Controls.Add(this.transformLabel);
-            this.Controls.Add(this.yLabel);
-            this.Controls.Add(this.yUpDown);
-            this.Controls.Add(this.xLabel);
-            this.Controls.Add(this.xUpDown);
-            this.Name = "Transformations";
-            this.Text = "Transformations";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Transformations_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.xUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.angleUpDown)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1000, 633);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(angleUpDown);
+            Controls.Add(panel1);
+            Controls.Add(testButton);
+            Controls.Add(translationRd);
+            Controls.Add(scaleRd);
+            Controls.Add(rotationRd);
+            Controls.Add(transformLabel);
+            Controls.Add(yLabel);
+            Controls.Add(yUpDown);
+            Controls.Add(xLabel);
+            Controls.Add(xUpDown);
+            Name = "Transformations";
+            Text = "Transformations";
+            Paint += Transformations_Paint;
+            ((System.ComponentModel.ISupportInitialize)xUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)yUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)angleUpDown).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

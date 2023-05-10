@@ -32,7 +32,7 @@ namespace _2DTransformations
 
             g.DrawLine(redPen, 0, 300, 600, 300);
             g.DrawLine(greenPen, 300, 0, 300, 600);
-            g.DrawLine(bluePen,point1,point2);
+            g.DrawLine(bluePen, point1, point2);
 
 
             //g.DrawRectangle(bluePen, testShape);
@@ -51,15 +51,15 @@ namespace _2DTransformations
             if (rotationRd.Checked)
             {
                 double[,] angleMatrix = MatrixOperations.MatrixRotation(angle);
-                newPoint1 = MatrixOperations.MultiplyMatrix(angleMatrix,oldPoint1);
+                newPoint1 = MatrixOperations.MultiplyMatrix(angleMatrix, oldPoint1);
                 newPoint2 = MatrixOperations.MultiplyMatrix(angleMatrix, oldPoint2);
 
-                point1 = new Point(centralPoint.X+ (int)Math.Round(newPoint1[0]), centralPoint.Y- (int)Math.Round(newPoint1[1]));
-                point2 = new Point(centralPoint.X+ (int)Math.Round(newPoint2[0]), centralPoint.Y- (int)Math.Round(newPoint2[1]));
+                point1 = new Point(centralPoint.X + (int)Math.Round(newPoint1[0]), centralPoint.Y - (int)Math.Round(newPoint1[1]));
+                point2 = new Point(centralPoint.X + (int)Math.Round(newPoint2[0]), centralPoint.Y - (int)Math.Round(newPoint2[1]));
             }
-            else if(scaleRd.Checked)
+            else if (scaleRd.Checked)
             {
-                double[,] scaleMatrix = MatrixOperations.MatrixScaling(x,y);
+                double[,] scaleMatrix = MatrixOperations.MatrixScaling(x, y);
                 newPoint1 = MatrixOperations.MultiplyMatrix(scaleMatrix, oldPoint1);
                 newPoint2 = MatrixOperations.MultiplyMatrix(scaleMatrix, oldPoint2);
 
@@ -67,7 +67,7 @@ namespace _2DTransformations
                 point1 = new Point(centralPoint.X + (int)newPoint1[0], centralPoint.Y - (int)newPoint1[1]);
                 point2 = new Point(centralPoint.X + (int)newPoint2[0], centralPoint.Y - (int)newPoint2[1]);
             }
-            else if(translationRd.Checked)
+            else if (translationRd.Checked)
             {
 
                 double[,] translationMatrix = MatrixOperations.MatrixTranslation(x, y);

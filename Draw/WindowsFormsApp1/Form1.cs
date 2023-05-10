@@ -67,70 +67,340 @@ namespace WindowsFormsApp1
         }
 
 
-        private void Bresenham(Point p1, Point p2, Bitmap bmp, Color color)
-        {
-            int x1 = p1.X;
-            int y1 = p1.Y;
-            int x2 = p2.X;
-            int y2 = p2.Y;
-
-            bool steep = Math.Abs(y2 - y1) > Math.Abs(x2 - x1);
-
-            if (steep)
+        var brush = Brushes.Black;
+            Graphics g = pictureBox1.CreateGraphics();
+            int w = pictureBox1.ClientSize.Width;
+            int h = pictureBox1.ClientSize.Height;
+            List<int> xToPrint = new List<int>(), yToPrint = new List<int>();
+            List<int> pk = new List<int>();
+            int x0 = int.Parse(textBox1.Text);
+            int y0 = int.Parse(textBox2.Text);
+            int xe = int.Parse(textBox3.Text);
+            int ye = int.Parse(textBox4.Text);
+            int temp;
+            int dx, dy;
+            int p;
+            int twoDy, twoDyMinusDx;
+            double m = (double)(ye - y0) / (xe - x0);
+            if (m >= 0 && m <= 1 && x0 < xe)
             {
-                Swap(ref x1, ref y1);
-                Swap(ref x2, ref y2);
-            }
+                dx = xe - x0;
+                dy = ye - y0;
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(x0);
+                yToPrint.Add(y0);
 
-            if (x1 > x2)
-            {
-                Swap(ref x1, ref x2);
-                Swap(ref y1, ref y2);
-            }
 
-            int dx = x2 - x1;
-            int dy = Math.Abs(y2 - y1);
-            int error = dx / 2;
-            int ystep = (y1 < y2) ? 1 : -1;
-            int y = y1;
-
-            for (int x = x1; x <= x2; x++)
-            {
-                bmp.SetPixel((steep ? y : x), (steep ? x : y), color);
-                error -= dy;
-                if (error < 0)
-                {   
-                    
-                    y -= ystep;
-                    
-                    error += dx;
+                while (x0 < xe)
+                {
+                    x0++;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0++;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(x0);
+                    yToPrint.Add(y0);
+                    g.FillRectangle(brush, x0 + w / 2, -y0 + h / 2, 1, 1);
                 }
             }
-            pictureBox1.Image = bmp;
+            else if (m > 1 && y0 < ye)
+            {
 
-        }
+                temp = x0;
+                x0 = y0;
+                y0 = temp;
+                temp = xe;
+                xe = ye;
+                ye = temp;
+                dx = xe - x0;
+                dy = ye - y0;
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(y0);
+                yToPrint.Add(x0);
 
-        private void Swap(ref int a, ref int b)
-        {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
 
-        private void btnBresenham_Click(object sender, EventArgs e)
-        {
-            int x1 = Convert.ToInt32(inputLineX1.Text) + 265;
-            int y1 = Convert.ToInt32(inputLineY1.Text) + 160;
+                while (x0 < xe)
+                {
+                    x0++;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0++;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(y0);
+                    yToPrint.Add(x0);
+                    g.FillRectangle(brush, y0 + w / 2, -x0 + h / 2, 1, 1);
+                }
+            }
+            else if (m < -1 && y0 < ye)
+            {
 
-            int x2 = Convert.ToInt32(inputLineX2.Text) + 265;
-            int y2 = Convert.ToInt32(inputLineY2.Text) + 160;
+                temp = x0;
+                x0 = y0;
+                y0 = temp;
+                temp = xe;
+                xe = ye;
+                ye = temp;
+                dx = xe - x0;
+                dy = -(ye - y0);
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(y0);
+                yToPrint.Add(x0);
 
-            Point p1 = new Point(x1, y1);
-            Point p2 = new Point(x2, y2);
-            Bitmap pic = new Bitmap(this.Width, this.Height);
-            Color red = Color.Red;
-            Bresenham(p1, p2, pic, red);
-        }
+
+                while (x0 < xe)
+                {
+                    x0++;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0--;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(y0);
+                    yToPrint.Add(x0);
+                    g.FillRectangle(brush, y0 + w / 2, -x0 + h / 2, 2, 2);
+                }
+            }
+            else if (m <= 0 && m >= -1 && xe < x0)
+            {
+                dx = -(xe - x0);
+                dy = ye - y0;
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(x0);
+                yToPrint.Add(y0);
+
+
+                while (x0 > xe)
+                {
+                    x0--;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0++;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(x0);
+                    yToPrint.Add(y0);
+                    g.FillRectangle(brush, x0 + w / 2, -y0 + h / 2, 1, 1);
+                }
+            }
+            else if (m > 0 && m <= 1 && xe < x0)
+            {
+                dx = -(xe - x0);
+                dy = -(ye - y0);
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(x0);
+                yToPrint.Add(y0);
+
+
+                while (x0 > xe)
+                {
+                    x0--;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0--;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(x0);
+                    yToPrint.Add(y0);
+                    g.FillRectangle(brush, x0 + w / 2, -y0 + h / 2, 1, 1);
+                }
+            }
+            else if (m > 1 && ye < y0)
+            {
+
+                temp = x0;
+                x0 = y0;
+                y0 = temp;
+                temp = xe;
+                xe = ye;
+                ye = temp;
+                dx = -(xe - x0);
+                dy = -(ye - y0);
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(y0);
+                yToPrint.Add(x0);
+
+
+                while (x0 > xe)
+                {
+                    x0--;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0--;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(y0);
+                    yToPrint.Add(x0);
+                    g.FillRectangle(brush, y0 + w / 2, -x0 + h / 2, 2, 2);
+                }
+            }
+            else if (m < -1 && ye < y0)
+            {
+
+                temp = x0;
+                x0 = y0;
+                y0 = temp;
+                temp = xe;
+                xe = ye;
+                ye = temp;
+                dx = -(xe - x0);
+                dy = ye - y0;
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+
+                pk.Add(p);
+                xToPrint.Add(y0);
+                yToPrint.Add(x0);
+
+
+                while (x0 > xe)
+                {
+                    x0--;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0++;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(y0);
+                    yToPrint.Add(x0);
+                    g.FillRectangle(brush, y0 + w / 2, -x0 + h / 2, 1, 1);
+                }
+            }
+            else if (m <= 0 && m >= -1 && x0 < xe)
+            {
+                dx = xe - x0;
+                dy = -(ye - y0);
+                p = 2 * dy - dx;
+                twoDy = 2 * dy;
+                twoDyMinusDx = 2 * (dy - dx);
+                pk.Add(p);
+                xToPrint.Add(x0);
+                yToPrint.Add(y0);
+
+
+                while (x0 < xe)
+                {
+                    x0++;
+                    if (p < 0)
+                        p += twoDy;
+                    else
+                    {
+                        y0--;
+                        p += twoDyMinusDx;
+                    }
+                    pk.Add(p);
+                    xToPrint.Add(x0);
+                    yToPrint.Add(y0);
+                    g.FillRectangle(brush, x0 + w / 2, -y0 + h / 2, 1, 1);
+                }
+            }
+
+
+        // private void Bresenham(Point p1, Point p2, Bitmap bmp, Color color)
+        // {
+        //     int x1 = p1.X;
+        //     int y1 = p1.Y;
+        //     int x2 = p2.X;
+        //     int y2 = p2.Y;
+
+        //     bool steep = Math.Abs(y2 - y1) > Math.Abs(x2 - x1);
+
+        //     if (steep)
+        //     {
+        //         Swap(ref x1, ref y1);
+        //         Swap(ref x2, ref y2);
+        //     }
+
+        //     if (x1 > x2)
+        //     {
+        //         Swap(ref x1, ref x2);
+        //         Swap(ref y1, ref y2);
+        //     }
+
+        //     int dx = x2 - x1;
+        //     int dy = Math.Abs(y2 - y1);
+        //     int error = dx / 2;
+        //     int ystep = (y1 < y2) ? 1 : -1;
+        //     int y = y1;
+
+        //     for (int x = x1; x <= x2; x++)
+        //     {
+        //         bmp.SetPixel((steep ? y : x), (steep ? x : y), color);
+        //         error -= dy;
+        //         if (error < 0)
+        //         {   
+                    
+        //             y -= ystep;
+                    
+        //             error += dx;
+        //         }
+        //     }
+        //     pictureBox1.Image = bmp;
+
+        // }
+
+        // private void Swap(ref int a, ref int b)
+        // {
+        //     int temp = a;
+        //     a = b;
+        //     b = temp;
+        // }
+
+        // private void btnBresenham_Click(object sender, EventArgs e)
+        // {
+        //     int x1 = Convert.ToInt32(inputLineX1.Text) + 265;
+        //     int y1 = Convert.ToInt32(inputLineY1.Text) + 160;
+
+        //     int x2 = Convert.ToInt32(inputLineX2.Text) + 265;
+        //     int y2 = Convert.ToInt32(inputLineY2.Text) + 160;
+
+        //     Point p1 = new Point(x1, y1);
+        //     Point p2 = new Point(x2, y2);
+        //     Bitmap pic = new Bitmap(this.Width, this.Height);
+        //     Color red = Color.Red;
+        //     Bresenham(p1, p2, pic, red);
+        // }
         private void Circle(Point center, int radius)
         {
             Bitmap pic = new Bitmap(this.Width, this.Height);

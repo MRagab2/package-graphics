@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\_FCAI - HU\\3.2\\Graphics\\proj\\2d-transformations-main\\2DTransformations\\2DTransformations\\2DTransformations.csproj": {}
+    "D:\\Study\\_FCAI - HU\\_Proj\\C#\\New folder\\package-graphics\\2D\\2DTransformations\\2DTransformations.csproj": {}
   },
   "projects": {
-    "D:\\Study\\_FCAI - HU\\3.2\\Graphics\\proj\\2d-transformations-main\\2DTransformations\\2DTransformations\\2DTransformations.csproj": {
+    "D:\\Study\\_FCAI - HU\\_Proj\\C#\\New folder\\package-graphics\\2D\\2DTransformations\\2DTransformations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\_FCAI - HU\\3.2\\Graphics\\proj\\2d-transformations-main\\2DTransformations\\2DTransformations\\2DTransformations.csproj",
+        "projectUniqueName": "D:\\Study\\_FCAI - HU\\_Proj\\C#\\New folder\\package-graphics\\2D\\2DTransformations\\2DTransformations.csproj",
         "projectName": "2DTransformations",
-        "projectPath": "D:\\Study\\_FCAI - HU\\3.2\\Graphics\\proj\\2d-transformations-main\\2DTransformations\\2DTransformations\\2DTransformations.csproj",
+        "projectPath": "D:\\Study\\_FCAI - HU\\_Proj\\C#\\New folder\\package-graphics\\2D\\2DTransformations\\2DTransformations.csproj",
         "packagesPath": "C:\\Users\\Ahmed-frc5gtvgtvgtrh\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\_FCAI - HU\\3.2\\Graphics\\proj\\2d-transformations-main\\2DTransformations\\2DTransformations\\obj\\",
+        "outputPath": "D:\\Study\\_FCAI - HU\\_Proj\\C#\\New folder\\package-graphics\\2D\\2DTransformations\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ahmed-frc5gtvgtvgtrh\\AppData\\Roaming\\NuGet\\NuGet.Config",
